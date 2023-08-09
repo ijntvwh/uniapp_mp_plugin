@@ -1,0 +1,11 @@
+/dist
+node_modules
+
+/.vscode
+
+/src/static
+/src/lib
+/src/wxcomponents
+/src/uni_modules
+
+*.js

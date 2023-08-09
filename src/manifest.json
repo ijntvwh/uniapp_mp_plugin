@@ -1,0 +1,24 @@
+{
+  "name": "",
+  "appid": "",
+  "description": "",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "ignoreDevUnusedFiles": true,
+      "ignoreUploadUnusedFiles": true,
+      "compileHotReLoad": false,
+      "es6": false,
+      "enhance": true,
+      "urlCheck": false
+    },
+    "usingComponents": true
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "vueVersion": "3"
+}

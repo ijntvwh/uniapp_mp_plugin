@@ -1,0 +1,13 @@
+{
+  "pages": [
+    {
+      "path": "pages/hello"
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uniapp_plugin",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  }
+}

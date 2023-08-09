@@ -1,0 +1,6 @@
+#!/bin/sh
+
+rm -rf dist/build/mp-weixin
+npx esbuild --bundle src/plugin.ts --outfile=src/plugin.js --format=esm --minify --target=es6
+uni build -p mp-weixin --plugin --out-dir dist/build/mp-weixin/plugin
+rm -f src/plugin.js

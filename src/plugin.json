@@ -1,0 +1,7 @@
+{
+  "publicComponents": {},
+  "pages": {
+    "hello": "pages/hello"
+  },
+  "main": "plugin.js"
+}

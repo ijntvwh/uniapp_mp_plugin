@@ -1,0 +1,16 @@
+{
+  "pages": ["pages/aaa/aaa"],
+  "subPackages": [],
+  "usingComponents": {},
+  "plugins": {
+    "my-plugin": {
+      "version": "dev",
+      "provider": ""
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
