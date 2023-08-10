@@ -15,14 +15,17 @@ const injectMpId = (env: Record<string, string>) => (contents: Buffer, filename:
 }
 export function pSusceptor(env: Record<string, string>) {
   const transform = injectMpId(env)
+  const isProd = env.VITE_USER_NODE_ENV === 'production'
+  const target = isProd ? 'build' : 'dev'
+  const mpRoot = `dist/${target}/mp-weixin/`
   return copy({
     verbose: true,
-    // copyOnce: !isProd,
+    copyOnce: !isProd,
     targets: [
-      { src: 'susceptor/project.config.json', dest: 'dist/build/mp-weixin/', transform },
-      { src: 'susceptor/project.private.config.json', dest: 'dist/build/mp-weixin/' },
-      { src: ['susceptor/miniprogram/*', '!**/app.json'], dest: 'dist/build/mp-weixin/miniprogram/' },
-      { src: 'susceptor/miniprogram/app.json', dest: 'dist/build/mp-weixin/miniprogram/', transform },
+      { src: 'susceptor/project.config.json', dest: mpRoot, transform },
+      { src: 'susceptor/project.private.config.json', dest: mpRoot },
+      { src: ['susceptor/miniprogram/*', '!**/app.json'], dest: `${mpRoot}/miniprogram/` },
+      { src: 'susceptor/miniprogram/app.json', dest: `${mpRoot}/miniprogram/`, transform },
     ],
   })
 }

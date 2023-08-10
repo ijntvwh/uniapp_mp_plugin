@@ -1,6 +1,10 @@
 #!/bin/sh
 
-rm -rf dist/build/mp-weixin
+trap 'rm -f src/plugin.js' EXIT SIGINT
+target=$([ "$1" == "build" ] && echo "build" || echo "dev")
+
+rm -rf "dist/${target}/mp-weixin"
 npx esbuild --bundle src/plugin.ts --outfile=src/plugin.js --format=esm --minify --target=es6
-uni build -p mp-weixin --plugin --out-dir dist/build/mp-weixin/plugin
-rm -f src/plugin.js
+param_watch=$([ $target == 'dev' ] && echo "-w")
+uni build $param_watch -p mp-weixin --plugin --out-dir "dist/$target/mp-weixin/plugin"
+

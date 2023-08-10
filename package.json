@@ -2,7 +2,8 @@
   "name": "uniapp_mp_plugin",
   "version": "1.0.0",
   "scripts": {
-    "build": "sh bin/plugin",
+    "plugin:dev": "sh bin/plugin",
+    "plugin:build": "sh bin/plugin build",
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm",
     "preview": "bash build/preview.sh",
